@@ -31,8 +31,11 @@ npm run test:e2e
 ```
 
 ### Run your unit tests
-```
+```shell
 npm run test:unit
+
+# すべてのテストをwatchモードで実行
+npx vue-cli-service test:unit --watch ./tests/**/*.ts
 ```
 
 ### Customize configuration
