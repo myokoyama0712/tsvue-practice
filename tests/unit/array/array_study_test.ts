@@ -35,4 +35,28 @@ describe('配列操作の学習', () => {
         }
         assert.deepEqual(['b', 'c', 'd'], testArray)
     })
+
+    it('複数要素および配列の一括push/unshift', () => {
+        let testArray = [0]
+        const added = [1, 2]
+        // スプレッド演算子
+        testArray.push(...added)
+        assert.deepEqual([0, 1, 2], testArray)
+        testArray = [0]
+        testArray.unshift(...added)
+        assert.deepEqual([1, 2, 0], testArray)  // ここは直感的じゃないかもしれない
+        // 可変長引数
+        testArray = [0]
+        testArray.push(1, 2)
+        assert.deepEqual([0, 1, 2], testArray)
+        testArray = [0]
+        testArray.unshift(1, 2)
+        assert.deepEqual([1, 2, 0], testArray)  // ここは直感的じゃないかもしれない
+    })
+
+    it('配列のshallow copy', () => {
+        const testArray = ['a', 'b', 'c']
+        const actual = testArray.slice()
+        assert.deepEqual(testArray, actual)
+    })
 })
