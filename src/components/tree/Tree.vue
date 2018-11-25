@@ -91,6 +91,5 @@ img.marker {
 
 .root-node span.selected {
     background-color: chartreuse;
-    padding: 3px;
 }
 </style>
