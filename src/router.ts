@@ -26,5 +26,15 @@ export default new Router({
       name: 'tree-example',
       component: () => import('./views/TreeExample.vue'),
     },
+    {
+      path: '/graph-example',
+      name: '/graph-example',
+      component: () => import('./views/GraphExample.vue'),
+    },
+    {
+      path: '/list-button',
+      name: 'list-button',
+      component: () => import('./views/ListButtonView.vue'),
+    },
   ],
 });
