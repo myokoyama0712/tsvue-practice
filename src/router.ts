@@ -36,5 +36,10 @@ export default new Router({
       name: 'list-button',
       component: () => import('./views/ListButtonView.vue'),
     },
+    {
+      path: '/sandbox',
+      name: 'sandbox',
+      component: () => import('./views/Sandbox.vue'),
+    },
   ],
 });

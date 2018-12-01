@@ -7,7 +7,9 @@
 <script>
 // https://qiita.com/huigo/items/a888dcee8f46d62bb9e3
 import ListButton from '@/components/ListButton.vue'
-import MenuButton from '@/components/menu-button/menu-button.vue'
+
+// element-ui
+import MenuButton from '@/components/menu-button/MenuButton.vue'
 
 export default {
   name: 'list-button-vuew',

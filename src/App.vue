@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
+      <router-link to="/sandbox">Sandbox</router-link> |
       <router-link to="/tree-example">Tree Example</router-link> |
       <router-link to="/graph-example">Graph Example</router-link> |
       <router-link to="/list-button">List Button</router-link>
