@@ -24,7 +24,7 @@ export default {
       this._eventRemovers.push({
         remove() {
           target.removeEventListener(eventType, callback)
-        }
+        },
       })
     },
   },
