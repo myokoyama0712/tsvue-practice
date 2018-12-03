@@ -12,11 +12,11 @@
 </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 import Tree from '@/components/tree/Tree.vue'
-import TreeNode from '@/components/tree/nodes.ts'
-import Bus from '@/components/tree/bus.ts'
+import TreeNode from '@/components/tree/nodes.js'
+import Bus from '@/components/tree/bus.js'
 
 export default Vue.extend({
   data() {
@@ -33,7 +33,7 @@ export default Vue.extend({
   },
 
   methods: {
-    addNewNode(event: any) {
+    addNewNode(event) {
       if (this.selectedNode === null) {
         alert('SELECT SOME NODE!')
         return
@@ -42,13 +42,13 @@ export default Vue.extend({
       this.selectedNode.children.push({ id: this.maxId, isSelected: false, children: [] })
     },
 
-    deleteNode(event: any) {
+    deleteNode(event) {
       if (confirm('CHILD NODES WILL BE DELETED, IS IT OK?')) { this.selectedNode.children = [] }
     },
   },
 
   created() {
-    Bus.$on('node-select-event', (selectedNode: any) => {
+    Bus.$on('node-select-event', (selectedNode) => {
       Bus.count++
       if (this.selectedNode) {
           this.selectedNode.isSelected = false
@@ -59,7 +59,7 @@ export default Vue.extend({
   },
 
   filters: {
-    nodeStringer(node: any) {
+    nodeStringer(node) {
       return node ? node.id : 'NOT SELECTED'
     },
   },

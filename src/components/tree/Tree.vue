@@ -9,10 +9,10 @@
 </li>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
-import Bus from '@/components/tree/bus.ts'
-import Regex from '@/components/tree/regex.ts'
+import Bus from '@/components/tree/bus.js'
+import Regex from '@/components/tree/regex.js'
 
 export default Vue.extend({
   name: 'tree',
@@ -27,7 +27,7 @@ export default Vue.extend({
   },
 
   methods: {
-    openAndClose(event: any) {
+    openAndClose(event) {
       const target = event.target
       const parent = event.target.parentNode
       if (target.nodeName === 'IMG' && parent.nodeName === 'LI') {
@@ -39,13 +39,13 @@ export default Vue.extend({
 
         // マーカーのトグル
         const array = target.src.split('/')
-        const fileName: string = array[array.length - 1]
+        const fileName = array[array.length - 1]
         // 参照: http://tk2000ex.blogspot.com/2017/11/vue.html
         fileName.match(Regex) ? target.src = require('./img/open.png') : target.src = require('./img/close.png')
       }
     },
 
-    selectNode(event: any, selectedNode: any) {
+    selectNode(event, selectedNode) {
         Bus.$emit('node-select-event', selectedNode)
     },
   },
