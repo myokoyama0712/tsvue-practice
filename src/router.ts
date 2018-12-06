@@ -26,5 +26,10 @@ export default new Router({
       name: 'FormView',
       component: () => import('./views/FormView.vue'),
     },
+    {
+      path: '/thanks',
+      name: 'Thanks',
+      component: () => import('./components/form/Thanks.vue'),
+    },
   ],
 });

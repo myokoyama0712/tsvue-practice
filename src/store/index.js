@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from '../router.ts'
 
 Vue.use(Vuex)
 
@@ -25,6 +26,9 @@ const Form = {
       // ≒イベントの発生
       if (rootState.errorFlag) {
         commit('setStepCount', null, { root: true })  // rootへのアクセス
+      }
+      if (rootState.stepCount === 2) {
+        router.push('thanks')
       }
     }
   },
